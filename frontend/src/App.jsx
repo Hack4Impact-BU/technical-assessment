@@ -1,48 +1,48 @@
 import './App.css'
+import { useState, useEffect } from 'react'
 import Title from './components/title/title'
-import { useEffect, useState } from 'react'
-import { titleCase } from 'title-case'
+import Filter from './components/filter/filter'
+import Table from './components/table/table'
 
 function App() {
   const [data, setData] = useState([])
+  const [state, setState] = useState('')
+  const [lccn, setLCCN] = useState('')
+
+  function getState(value) {
+    if (value !== null)
+      setState(value)
+    else
+      setState('')
+  }
+  function getLCCN(value) {
+    if (value !== null)
+      setLCCN(value)
+    else
+      setLCCN('')
+  }
 
   useEffect(() => {
     fetch('http://localhost:3000/newspapers')
-      .then(res => res.json())
-      .then(data => {
-        let newData = []
-        for (let i = 0; i < data.newspapers.length; i++) {
-          newData.push(data.newspapers[i])
-        }
-        setData(newData)
-      })
-  }, [])
+        .then(res => res.json())
+        .then(data => {
+            let newData = []
+            for (let i = 0; i < data.newspapers.length; i++)
+                newData.push(data.newspapers[i])
+            setData(newData)
+        })
+    }, 
+  [])
 
   return (
     <>
       <Title />
-      <main className='main'>
-        <section className='table'>
-          <table>
-            <tr>
-              <th>Title</th>
-              <th>State</th>
-              <th>LCCN</th>
-            </tr>
-            {
-              data.map((entry) => {
-                return (
-                  <tr onClick={() => window.open(entry.url.slice(0, entry.url.length-5))}>
-                    <td title={entry.title}>{titleCase(entry.title.replace('.', '').replace('[volume]', ''))}</td>
-                    <td>{entry.state}</td>
-                    <td>{entry.lccn}</td>
-                  </tr>
-                )
-              })
-            }
-          </table>
-        </section>
-      </main>
+      <p className='info first'>Using this resource, you can look up information on the <i>Chronicling America</i> database provided by the Library of Congress. You can filter results by state and LCCN by using the selection menu.</p>
+      <p className='info'>Click on a row to access more info about the newspaper on the database. The titles in the table have been adjusted for readability; hover over them to view the original title from the database.</p>
+      <Filter data={data} sendState={getState} sendLCCN={getLCCN} />
+      <Table data={data.filter((value) => (value.state == state || state == '') && (value.lccn.substring(0, lccn.length) == lccn.toLowerCase() || lccn == ''))} />
+      <h1 className='info'>Join Our Community</h1>
+      <p className='info'>You can join our community by entering your name and email in the boxes below. Please note that your information will be publicly accessible on our community page upon submission.</p>
     </>
   )
 }

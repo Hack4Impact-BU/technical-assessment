@@ -1,0 +1,15 @@
+#filter-state, #filter-lccn {
+    font-family: 'Poppins', sans-serif;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#filter-text {
+    font-size: 1.2rem;
+}
