@@ -25,7 +25,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch('http://localhost:3000/newspapers')
+    fetch('https://our-republic-b13c5c1798c4.herokuapp.com/newspapers')
         .then(res => res.json())
         .then(data => {
             let newData = []

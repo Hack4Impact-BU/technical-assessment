@@ -15,7 +15,7 @@ function Community() {
     const rowsPerPage = 8
 
     useEffect(() => {
-        fetch('http://localhost:3000/community')
+        fetch('https://our-republic-b13c5c1798c4.herokuapp.com/community')
             .then(res => res.json())
             .then(community => {
                 let newCommunity = []

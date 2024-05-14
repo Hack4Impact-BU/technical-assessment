@@ -12,7 +12,7 @@ export default function Input() {
     const [email, setEmail] = useState('')
 
     function addUser() {
-        fetch('http://localhost:3000/add-user', {
+        fetch('https://our-republic-b13c5c1798c4.herokuapp.com/add-user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
