@@ -12,7 +12,6 @@ export default function Input() {
     const [email, setEmail] = useState('')
 
     function addUser() {
-        if (setFirst == "" || setLast == "" || setEmail == "") return
         fetch('http://localhost:3000/add-user', {
             method: 'POST',
             headers: {
@@ -53,8 +52,10 @@ export default function Input() {
                     disableElevation 
                     endIcon={<SendIcon />}
                     onClick={() => {
-                        addUser();
-                        window.open('community', '_self');
+                        if (first != "" && last != "" && email != "") {
+                            addUser();
+                            window.open('community', '_self');
+                        }
                     }}
                 >Submit</Button>
             </ThemeProvider>
