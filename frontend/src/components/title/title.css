@@ -3,11 +3,11 @@
     font-size: 3rem;
 }
 
-.title:hover {
+.title span:hover {
     cursor: pointer;
 }
   
-.title h1 {
+.title span {
     background-color: #333;
     background-image: linear-gradient(45deg, #ff0000, #099fff);
     background-size: 100%;
