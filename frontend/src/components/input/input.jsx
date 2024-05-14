@@ -68,4 +68,7 @@ const theme = createTheme({
         main: '#9880a8',
       }
     },
+    typography: {
+        fontFamily: ['Poppins', 'sans-serif'].join(','),
+    },
 })

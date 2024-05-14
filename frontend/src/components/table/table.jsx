@@ -11,6 +11,7 @@ export default function Table({ data }) {
     const [page, setPage] = React.useState(0)
     const rowsPerPage = 8
 
+    // if filtering sets the data length to less than the current page, reset the page
     if (page > 0 && page*rowsPerPage > data.length) setPage(0)
     const handleChangePage = (event, newPage) => {
         setPage(newPage)
