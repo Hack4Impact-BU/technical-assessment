@@ -13,6 +13,9 @@ app.use(bodyParser.json())
 
 const PORT = process.env.PORT || 3000
 
+/*const mongourl = process.env.MONGO_URL
+const mongoclient = new MongoClient(mongourl, {})*/
+
 app.get('/', (req, res) => {
     res.send('/')
 })
@@ -27,4 +30,29 @@ app.get('/newspapers', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`)
+})
+
+app.get('/community', async (req, res) => {
+    try {
+        //const users = await mongoclient.db('our-republic').collection('users').find({}).toArray()
+        res.status(200).json(users)
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({ message: 'error' })
+    }
+})
+
+app.post('/add-user', async (req, res) => {
+    try {
+        const user = req.body
+        if (!user.first || !user.last || !user.email || Object.keys(user).length !== 3) {
+            res.status(400).json({ message: 'bad request' })
+            return
+        }
+        //await mongoclient.db('our-republic').collection('users').insertOne(user)
+        res.status(201).json({ message: 'success' })
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({ message: 'error' })
+    }
 })

@@ -4,7 +4,6 @@ import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import Table from '../table/table'
 
 export default function Filter({ data, sendState, sendLCCN }) {
     return (

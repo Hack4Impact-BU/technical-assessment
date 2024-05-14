@@ -24,14 +24,7 @@ td, th {
   
 th {
     border-bottom: 0;
-    box-shadow: inset 0 -0.3rem 0 #333;
     background-color: #ab91bf;
-    position: sticky;
-    top: 0;
-}
-  
-td:nth-child(1), td:nth-child(2), td:nth-child(3) {
-    border-top: 0;
 }
   
 tr:nth-child(even) {
@@ -46,4 +39,5 @@ tr:not(.nohover):hover {
 tfoot button {
     border: 0.15rem solid #333;
     border-radius: 40%;
+    margin: 0.1rem;
 }

@@ -1,8 +1,10 @@
+import React from 'react'
 import './App.css'
 import { useState, useEffect } from 'react'
 import Title from './components/title/title'
 import Filter from './components/filter/filter'
 import Table from './components/table/table'
+import Input from './components/input/input'
 
 function App() {
   const [data, setData] = useState([])
@@ -41,8 +43,9 @@ function App() {
       <p className='info'>Click on a row to access more info about the newspaper on the database. The titles in the table have been adjusted for readability; hover over them to view the original title from the database.</p>
       <Filter data={data} sendState={getState} sendLCCN={getLCCN} />
       <Table data={data.filter((value) => (value.state == state || state == '') && (value.lccn.substring(0, lccn.length) == lccn.toLowerCase() || lccn == ''))} />
-      <h1 className='info'>Join Our Community</h1>
+      <h1 className='info'><span className='info' onClick={() => window.open('community', '_self')}>Join Our Community</span></h1>
       <p className='info'>You can join our community by entering your name and email in the boxes below. Please note that your information will be publicly accessible on our community page upon submission.</p>
+      <Input />
     </>
   )
 }

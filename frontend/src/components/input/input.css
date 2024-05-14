@@ -1,0 +1,12 @@
+#input-first, #input-last, #input-email {
+    font-family: 'Poppins', sans-serif;
+    width: 12rem;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}

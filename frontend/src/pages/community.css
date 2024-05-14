@@ -1,0 +1,20 @@
+.community {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+p.community {
+    font-size: 1.2rem;
+}
+
+h1.community {
+    font-size: 3rem;
+}
+
+.first {
+    margin-top: -5rem;
+}
