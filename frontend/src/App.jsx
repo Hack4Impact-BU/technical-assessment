@@ -7,15 +7,22 @@ import axios from 'axios'
 function App() {
   const [count, setCount] = useState(0)
   const [array, setArray] = useState([])
+  const [newspapers, setNewspapers] = useState([])
 
   const fetchAPI = async () => {
     const response = await axios.get("http://localhost:8080/api/users")
-    console.log(response.data.users)
+    setArray(response.data.users)
+  }
+
+  const fetchNews = async () => {
+    const response = await axios.get("http://localhost:8080/api/news")
+    console.log(response.data)
+    setNewspapers(response.data.newspapers)
   }
 
   // run once
   useEffect(() => {
-    fetchAPI()
+    fetchNews()
   },[])
 
   return (
@@ -28,14 +35,21 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>News</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        {/* <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        </button> */}
+        <div>
+          {
+            newspapers.map((newspaper, index) =>(
+              <div key={index}>
+                <h2>{newspaper.title}</h2>
+                <p>{newspaper.state}</p>
+              </div>
+            ))
+          }
+        </div>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
