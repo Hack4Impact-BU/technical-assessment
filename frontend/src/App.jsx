@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
+
 
 import './App.css'
 import Header from './header/header'
+import Filter from './filter/filter'
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
       <p>
         hellow
       </p>
+      <Filter />
     </>
   )
 }
