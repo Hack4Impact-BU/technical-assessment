@@ -88,7 +88,7 @@ return (
         </div>
     
         <div className='flex flex-col mt-10 gap-4 border-2 p-10 border-black-800 rounded-[8px]'>
-          <p>Join the mailing list!</p>
+          <p className='text-[36px]'>Join the mailing list!</p>
           <TextField  
           label="Name" 
           variant="outlined" 
