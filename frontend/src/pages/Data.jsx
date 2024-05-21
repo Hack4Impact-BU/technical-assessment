@@ -67,14 +67,15 @@ const handleSubmit = async (e) => {
 };
 return (
         <div className='w-full h-screen '>
+
         <div className='w-[80%] mx-auto '>
-        
-        <div className=' flex items-center pt-4 gap-4 pb-4'>
+        <h1 className='text-center mt-10'>Directory</h1>
+        <div className=' flex items-center mt-10 gap-4 pb-4'>
             <LccnFilter  searchValue={searchValue} setSearchValue={setSearch}/> 
             <StateFilter state={selectedState} setState={setState}/>
         </div>
         
-        <div className=''>
+        <div className='mt-2'>
     
           <DataGrid
             rows={filteredRows}
