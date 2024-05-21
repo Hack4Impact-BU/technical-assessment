@@ -12,14 +12,8 @@ app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 5174
 
-app.use('/api', async (req, res) => {
-    const apiURL = 'https://chroniclingamerica.loc.gov/newspapers.json';
-    const response = await fetch(apiURL);
-    const data = await response.json();
-    res.json(data)
-});
 
-app.get('/hi', async(req, res) => {
+app.get('/news', async(req, res) => {
     const apiURL = 'https://chroniclingamerica.loc.gov/newspapers.json';
     const response = await fetch(apiURL);
     const data = await response.json();
@@ -34,4 +28,6 @@ app.get('/hello', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     console.log("hello")
+    fetch('http://localhost:5174/news').then(res => res.json()).then(val => console.log(val.newspapers[0].state))
 })
+
