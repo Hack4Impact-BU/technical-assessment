@@ -37,10 +37,12 @@ export default function CommunityPage () {
                 <TextField  
                 label="Name" 
                 variant="outlined" 
+                value={name}
                 onChange={(e) => setName(e.target.value)}/>
                 <TextField  
                 label="Email" 
                 variant="outlined" 
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}/>
                 <button className="bg-black text-white py-4"onClick={handleSubmit}>Join Now!</button>
 
