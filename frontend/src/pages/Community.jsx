@@ -50,15 +50,15 @@ export default function CommunityPage () {
             <table className="border-[1px] mt-10  border-black w-[80%] ">
                 <thead>
                     <tr>
-                        <th className="p-4 border-[1px] border-gray-500 bg-gray-200">Email</th>
-                        <th className="p-4 bg-gray-200">Name</th>
+                        <th className="p-4 border-[1px] border-gray-500 bg-gray-200">Name</th>
+                        <th className="p-4 bg-gray-200">Email</th>
                     </tr>
                 </thead>
                 <tbody>
                 {emails.map((email) => (
                     <tr key={email._id}>
-                        <td className="p-2 border-[1px] border-black">{email.email}</td>
-                        <td className="p-2 border-[1px] border-black">{email.name}</td> 
+                        <td className="p-2 border-[1px] border-black">{email.name}</td>
+                        <td className="p-2 border-[1px] border-black">{email.email}</td> 
                     </tr>
                 ))}
                 </tbody>
