@@ -30,7 +30,6 @@ function Data ()  {
   const columns = [
     { field: 'id', headerName: 'ID'},
     { field: 'lccn', headerName: 'lccn'},
-    { field: 'url', headerName: 'URL'},
     { field: 'state', headerName: 'State'},
     { field: 'title', headerName: 'Title'}
   ];
@@ -41,7 +40,6 @@ function Data ()  {
   .map((item, index) => ({
     id: index,
     lccn: item.lccn,
-    url: item.url,
     state: item.state,
     title: item.title,
   }));
