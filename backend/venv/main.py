@@ -7,23 +7,11 @@ cors = CORS(app, origins='*')
 
 url = "https://chroniclingamerica.loc.gov/newspapers.json"
 
-@app.route('/api/users', methods=['GET'])
-
-def users():
-    return jsonify(
-        {
-            "users": [
-                "David",
-            ]
-        }
-    )
-
 @app.route('/api/news', methods=['GET'])
 
 def news():
     response = requests.get(url)
     data = response.json()
-    print(data)
     return jsonify(data)
 
 if __name__ == "__main__":

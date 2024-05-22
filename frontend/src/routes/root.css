@@ -1,0 +1,16 @@
+body {
+    padding: none;
+    margin: none;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 50px;
+    
+}
+
+#sidebar {
+    display: flex;
+    justify-content: space-between;
+}
