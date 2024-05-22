@@ -17,6 +17,9 @@ function App() {
   //state filtering input
   const [stateinput, setStateInput] = useState('');
 
+  //lccn filtering input
+  const [lccninput, setLccnInput] = useState('');
+
   //originally did the .then() way but decided to do this
     useEffect(() => {
       const fetchData = async () => {
@@ -50,15 +53,22 @@ function App() {
 
       <section className="filter">
             <div className="USStates">
-                <input type="text" placeholder="enter state" />
+                <input type="text" placeholder="enter state"
+                //stateinput is the useState array declared earlier
+                 value={stateinput}
+                 onChange={(e) => setStateInput(e.target.value)}
+                 />
             </div>
 
             <div className="lccn">
-                <input type="text" placeholder="enter lccn" />
+                <input type="text" placeholder="enter lccn"
+                 value={lccninput}
+                 onChange={(e) => setLccnInput(e.target.value)}
+                />
             </div>
       </section>
 
-      <BasicTable news={news}/>
+      <BasicTable news={news} stateinput={stateinput} lccninput={lccninput} />
     </>
   )
 }
