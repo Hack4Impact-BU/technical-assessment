@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 
 
 import './App.css'
-import Header from './header/header'
-import BasicTable from './table/table'
+import Header from './components/header/header'
+import BasicTable from './components/table/table'
 
 
 function App() {
@@ -67,7 +67,9 @@ function App() {
                 />
             </div>
       </section>
+      
 
+      {/* pass in the search inputs filter  */}
       <BasicTable news={news} stateinput={stateinput} lccninput={lccninput} />
     </>
   )

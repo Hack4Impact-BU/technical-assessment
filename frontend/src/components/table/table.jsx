@@ -29,7 +29,7 @@ export default function BasicTable({ news, stateinput, lccninput }) {
       {filteredNews.map(news => (
         <tr key={news.id}>
           <td>{news.state}</td>
-          <td><a href={news.url} target='_blank'>{news.title}</a></td>
+          <td><a href={`https://www.loc.gov/item/${news.lccn}`} target='_blank'>{news.title}</a></td>
           <td>{news.lccn}</td>
         </tr>
       ))}
