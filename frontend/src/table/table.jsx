@@ -16,7 +16,8 @@ export default function BasicTable({ news }) {
 
 
   return (
-    <table>
+    <div className='table'>
+      <table>
       <thread>
         <tr>
           <th>state</th>
@@ -28,12 +29,14 @@ export default function BasicTable({ news }) {
       {newsData.map(news => (
         <tr key={news.id}>
           <td>{news.state}</td>
-          <td>{news.title}</td>
+          <td><a href={news.url} target='_blank'>{news.title}</a></td>
           <td>{news.lccn}</td>
         </tr>
       ))}
-    </tbody>
-    </table>
+      </tbody>
+      </table>
+    </div>
+    
     
     // <TableContainer component={Paper}>
 

@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 
 import './App.css'
 import Header from './header/header'
-import Filter from './filter/filter'
 import BasicTable from './table/table'
 
 
@@ -12,7 +11,11 @@ function App() {
   //useState to store fetched data
   const [news, setData] = useState([])
 
+  //used for loading screen
   const [loading, setLoading] = useState(true);
+
+  //state filtering input
+  const [stateinput, setStateInput] = useState('');
 
   //originally did the .then() way but decided to do this
     useEffect(() => {
@@ -44,7 +47,17 @@ function App() {
   
     <>
       <Header />
-      <Filter />
+
+      <section className="filter">
+            <div className="USStates">
+                <input type="text" placeholder="enter state" />
+            </div>
+
+            <div className="lccn">
+                <input type="text" placeholder="enter lccn" />
+            </div>
+      </section>
+
       <BasicTable news={news}/>
     </>
   )
