@@ -4,12 +4,15 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/header/header'
 import BasicTable from './components/table/table'
+import Usertable from './components/usertable/usertable'
 
 
 function App() {
   
-  //useState to store fetched data
+  //useState to store fetched news data
   const [news, setData] = useState([])
+
+  const [users, setUsers] = useState([])
 
   //used for loading screen
   const [loading, setLoading] = useState(true);
@@ -43,6 +46,15 @@ function App() {
       fetchData();
     }, [])
 
+
+    useEffect(() => {
+      fetch('http://localhost:5174/user')
+      .then(res => res.json())
+      .then(data => {
+        setUsers(data);
+      })
+    }, [])
+
   //ANNOYING ISSUE
   //set a loading page so that api can be fetched properly
   //before accessing the json data
@@ -51,6 +63,9 @@ function App() {
     return <div>Loading...</div>
   }
 
+  // grab name and email
+  // console.log(users[0].name);
+  // console.log(users[0].email);
 
   // --------------------------------------------------------------------
   return (
@@ -74,6 +89,8 @@ function App() {
         </div>
       
         <br></br>
+
+        <Usertable users={users}/>
 
       </section>
       <section className="filter">
