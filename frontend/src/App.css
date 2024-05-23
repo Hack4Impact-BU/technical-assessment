@@ -46,7 +46,7 @@
   grid-template-columns: 1fr;
   grid-auto-rows: minmax(75px, 75px);
   width: 90vw;
-  height: 70vh;
+  height: 65vh;
   overflow-y: scroll;
   border: 5px solid white;
 }
@@ -55,5 +55,19 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(75px, 75px);
+  border: 2px solid black;
 }
 
+.news {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.selectButton {
+  color: black;
+  background-color: grey;
+  border: 3px solid black;
+  padding: 10px;
+}

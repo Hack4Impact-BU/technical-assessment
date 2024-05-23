@@ -26,36 +26,46 @@ function App() {
     fetchNews();
   }, []);
 
+  // new filtered array
+  let selectedNewsDisplay;
+
+  if (select === '') {
+    selectedNewsDisplay = newspapers;
+  } else {
+    selectedNewsDisplay = newspapers.filter((news) => news.state === select);
+  }
+
   return (
     <>
       <div className='head-bar'>
         <h2>News</h2>
       </div>
-      <div className='grid-container'>
-        <select value={select} onChange={(e) => setSelect(e.target.value)}>
+      <div className='news'>
+        {/* selection button, set value to select */}
+        <select
+          className='selectButton'
+          value={select}
+          onChange={(e) => setSelect(e.target.value)}
+        >
           <option value=''>All States</option>
           {state.map((each) => (
             <option key={each} value={each}>
               {each}
             </option>
           ))}
-        </select>
-        <FontAwesomeIcon icon={faArrowDown} />
-        {/* <button className='button' id='button'>
-          Filter
           <FontAwesomeIcon icon={faArrowDown} />
-        </button>
-        <div className='dropDown' id='dropDown'>
-          <option></option> */}
-        {/* </div> */}
-        {newspapers.map((newspaper, index) => (
-          <div key={index} className='grid-item'>
-            <h4>{newspaper.title}</h4>
-            <p>{newspaper.lccn}</p>
-            <p>{newspaper.state}</p>
-            <p>{newspaper.url}</p>
-          </div>
-        ))}
+        </select>
+        {/* news box */}
+        <div className='grid-container'>
+          {selectedNewsDisplay.map((newspaper, index) => (
+            <div key={index} className='grid-item'>
+              <h4>{newspaper.title}</h4>
+              <p>{newspaper.lccn}</p>
+              <p>{newspaper.state}</p>
+              <p>{newspaper.url}</p>
+            </div>
+          ))}
+        </div>
       </div>
       <p className='read-the-docs'></p>
     </>

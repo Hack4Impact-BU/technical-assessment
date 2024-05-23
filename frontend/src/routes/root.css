@@ -1,16 +1,21 @@
 body {
-    padding: none;
-    margin: none;
+  padding: 0;
+  margin: 0;
 }
 
 ul {
-    list-style-type: none;
-    display: flex;
-    gap: 50px;
-    
+  list-style-type: none;
+  display: flex;
+  gap: 50px;
+  color: black;
+}
+
+link {
+  color: black;
 }
 
 #sidebar {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
 }
