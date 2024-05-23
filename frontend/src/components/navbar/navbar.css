@@ -1,0 +1,44 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #ffffff; 
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.home{
+    text-decoration: none;
+}
+
+.community {
+    align-items: right;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    transition: all 0ms ease-in-out;
+}
+
+.about{
+    text-decoration: none;
+    padding: 10px;
+    color:white;
+    transition: all 0ms ease-in-out;
+}
+
+.community:hover {
+    color:yellow;
+}
+
+.about:hover{
+    color:yellow;
+}

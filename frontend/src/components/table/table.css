@@ -1,0 +1,22 @@
+.table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.loading{
+    font-size: 25px;
+    padding: 20px;
+}
+
+.lccn-search {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 50%;
+}
+
+.state-search{
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 50%;
+}
