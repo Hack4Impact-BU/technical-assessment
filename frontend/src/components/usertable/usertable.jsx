@@ -10,6 +10,7 @@ export default function Usertable({users}) {
                     <tr>
                         <th>name</th>
                         <th>email</th>
+                        <th>date joined</th>
                     </tr>
                 </thread>
                 <tbody>
@@ -17,6 +18,7 @@ export default function Usertable({users}) {
                         <tr key={user.id}>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
+                            <td>{user.dateJoined}</td>
                         </tr>
                     ))}
                 </tbody>

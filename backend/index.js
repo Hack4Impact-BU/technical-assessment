@@ -37,7 +37,7 @@ app.post('/add-user', async(req, res) => {
     try {
         const user = req.body
 
-        if (!user.name || !user.email || Object.keys(user).length !== 2) {
+        if (!user.name || !user.email || !user.dateJoined || Object.keys(user).length !== 3) {
             res.status(400).json({ message: 'bad request' })
             return
         }

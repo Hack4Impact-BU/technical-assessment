@@ -60,6 +60,12 @@ function App() {
 
 
     function addUser() {
+
+      //grab the date in string form
+      let today = new Date();
+      let formattedDate = today.toISOString().slice(0, 10);
+      let formattedTime = today.toTimeString().slice(0, 8); // Extracts HH:MM:SS from the time string
+      let formattedDateTime = `${formattedDate} ${formattedTime}`;
       //return early if username or email is empty
       if (username === '' || email === '') return
 
@@ -68,12 +74,13 @@ function App() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name: username, email: email})
+        body: JSON.stringify({ name: username, email: email, dateJoined: formattedDateTime})
       }).then(res => console.log(res))
 
       const newUser = {
         name: username,
         email: email,
+        dateJoined: formattedDateTime
       }
 
       //this is for dymanic rendering, dont need refresh
