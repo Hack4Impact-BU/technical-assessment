@@ -57,6 +57,12 @@ function App() {
         </select>
         {/* news box */}
         <div className='grid-container'>
+          <div className='title-grid'>
+            <h4>Title</h4>
+            <p>LCCN</p>
+            <p>State</p>
+            <p>URL</p>
+          </div>
           {selectedNewsDisplay.map((newspaper, index) => (
             <div key={index} className='grid-item'>
               <h4>{newspaper.title}</h4>
