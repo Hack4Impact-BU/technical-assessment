@@ -10,9 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@mui/material": "^5.15.18",
     "@nextui-org/react": "^2.3.6",
     "@nextui-org/system": "^2.1.2",
     "@nextui-org/table": "^2.0.33",

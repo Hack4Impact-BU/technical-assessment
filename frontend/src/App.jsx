@@ -5,6 +5,8 @@ import './App.css'
 import Header from './components/header/header'
 import BasicTable from './components/table/table'
 import Usertable from './components/usertable/usertable'
+import FilterInput from './components/filterinput/filterinput'
+import UserInput from './components/userinput/userinput'
 
 
 function App() {
@@ -106,47 +108,22 @@ function App() {
       <Header />
 
 
-      <section className='communityInput'>
-        <div className="name">
-          <input type='text' placeholder="enter name"
-           value={username}
-           onChange={(e) => setUsername(e.target.value)}
-           />
-        </div>
-
-        <div className="email">
-          <input type='text' placeholder="enter email"
-           value={email}
-           onChange={(e) => setEmail(e.target.value)}
-           />
-        </div>
-      
-        <div className='addButton'>
-          <button type='Button' onClick={addUser}>join community</button>
-        </div>
-      </section>
-
-      <br></br>
+      <UserInput
+       username={username}
+       setUsername={setUsername}
+       email={email}
+       setEmail={setEmail}
+       addUser={addUser}
+      />
       <Usertable users={users}/>
 
-      <section className="filter">
-            <div className="USStates">
-                <input type="text" placeholder="enter state"
-                //stateinput is the useState array declared earlier
-                 value={stateinput}
-                 onChange={(e) => setStateInput(e.target.value)}
-                 />
-            </div>
-
-            <div className="lccn">
-                <input type="text" placeholder="enter lccn"
-                 value={lccninput}
-                 onChange={(e) => setLccnInput(e.target.value)}
-                />
-            </div>
-      </section>
+      <FilterInput 
+       stateinput={stateinput}
+       setStateInput={setStateInput}
+       lccninput={lccninput}
+       setLccnInput={setLccnInput}
+        />
       
-
       {/* pass in the search inputs filter  */}
       <BasicTable news={news} stateinput={stateinput} lccninput={lccninput} />
     </>
