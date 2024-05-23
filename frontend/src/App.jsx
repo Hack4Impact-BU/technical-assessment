@@ -20,6 +20,12 @@ function App() {
   //lccn filtering input
   const [lccninput, setLccnInput] = useState('');
 
+  //name for community input
+  const [username, setUsername] = useState('');
+
+  //email for community input
+  const [email, setEmail] = useState('');
+
   //originally did the .then() way but decided to do this
     useEffect(() => {
       const fetchData = async () => {
@@ -45,12 +51,31 @@ function App() {
     return <div>Loading...</div>
   }
 
-  return (
 
-  
+  // --------------------------------------------------------------------
+  return (
     <>
       <Header />
 
+
+      <section className='community'>
+        <div className="name">
+          <input type='text' placeholder="enter name"
+           value={username}
+           onChange={(e) => setUsername(e.target.value)}
+           />
+        </div>
+
+        <div className="email">
+          <input type='text' placeholder="enter email"
+           value={email}
+           onChange={(e) => setEmail(e.target.value)}
+           />
+        </div>
+      
+        <br></br>
+
+      </section>
       <section className="filter">
             <div className="USStates">
                 <input type="text" placeholder="enter state"
