@@ -1,3 +1,6 @@
+Forgot to make a fork and just created my own repo instead.\
+If you want to see the commit history, goto https://github.com/qubi00/EchoingTimes
+
 #How the project went\
 Overall it was fine, pretty fun project honestly. Was able to learn a lot about react, apis, and ui libraries.
 The part that gave me the most headache was the apis, since initially i wasn't that familiar with why we had to
