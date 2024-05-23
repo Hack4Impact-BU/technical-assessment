@@ -1,21 +1,30 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import axios from 'axios'
+import { useState, useEffect } from 'react';
+import './App.css';
+import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
-  const [newspapers, setNewspapers] = useState([])
+  const [newspapers, setNewspapers] = useState([]);
+  const [state, setStates] = useState([]);
+  const [select, setSelect] = useState('');
 
   // http://127.0.0.1:8000/api/news view
   const fetchNews = async () => {
-    const response = await axios.get("http://localhost:8000/api/news")
-    console.log(response.data)
-    setNewspapers(response.data.newspapers)
-  }
+    const response = await axios.get('http://localhost:8000/api/news');
+    console.log(response.data);
+    const newspapers = response.data.newspapers;
+    setNewspapers(newspapers);
+    // make array for dropdown filter
+    const onlyStates = newspapers.map((news) => news.state);
+    const uniqueState = Array.from(new Set(onlyStates));
+    setStates(uniqueState);
+  };
 
-  // run once
+  // run everytime new render
   useEffect(() => {
-    fetchNews()
-  },[])
+    fetchNews();
+  }, []);
 
   return (
     <>
@@ -23,7 +32,23 @@ function App() {
         <h2>News</h2>
       </div>
       <div className='grid-container'>
-        {newspapers.map((newspaper, index) =>(
+        <select value={select} onChange={(e) => setSelect(e.target.value)}>
+          <option value=''>All States</option>
+          {state.map((each) => (
+            <option key={each} value={each}>
+              {each}
+            </option>
+          ))}
+        </select>
+        <FontAwesomeIcon icon={faArrowDown} />
+        {/* <button className='button' id='button'>
+          Filter
+          <FontAwesomeIcon icon={faArrowDown} />
+        </button>
+        <div className='dropDown' id='dropDown'>
+          <option></option> */}
+        {/* </div> */}
+        {newspapers.map((newspaper, index) => (
           <div key={index} className='grid-item'>
             <h4>{newspaper.title}</h4>
             <p>{newspaper.lccn}</p>
@@ -32,10 +57,9 @@ function App() {
           </div>
         ))}
       </div>
-      <p className="read-the-docs">
-      </p>
+      <p className='read-the-docs'></p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
