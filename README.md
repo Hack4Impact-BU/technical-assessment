@@ -32,3 +32,11 @@ In order for your code to be assessed you must submit a PR by March 27th with th
 - a couple sentences about how the project went
 
 ** YOU DO NOT NEED TO HAVE A 100% COMPLETE PROJECT TO SUBMIT. Please submit whatever you are able to make 
+
+
+
+## Reflection
+Working on this project was a lot of fun! I had the opportunity to work with mysql as my database of choice, which is a database I am trying to improve at, so this assessment was a nice way to learn a lot about that framework. I also used material UI for the first time, which was hard at first to figure out, but after practicing with it, I managed to get the hang of it! Overall it was a great experience that covered many of the fundamentals of creating a full-stack application!
+
+## Link to Video
+https://drive.google.com/file/d/1sY-AKfvmb8IzKi4_8lkLqA2Hur3Q2324/view
