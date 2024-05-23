@@ -12,6 +12,7 @@ function App() {
   //useState to store fetched news data
   const [news, setData] = useState([])
 
+  //users store array of BOTH name and email
   const [users, setUsers] = useState([])
 
   //used for loading screen
@@ -47,6 +48,7 @@ function App() {
     }, [])
 
 
+    //storing data so it can pass in userTable
     useEffect(() => {
       fetch('http://localhost:5174/user')
       .then(res => res.json())
@@ -55,6 +57,30 @@ function App() {
       })
     }, [])
 
+
+
+    function addUser() {
+      //return early if username or email is empty
+      if (username === '' || email === '') return
+
+      fetch('http://localhost:5174/add-user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name: username, email: email})
+      }).then(res => console.log(res))
+
+      const newUser = {
+        name: username,
+        email: email,
+      }
+
+      //this is for dymanic rendering, dont need refresh
+      setUsers([...users, newUser])
+      setUsername('');
+      setEmail('');
+    }
   //ANNOYING ISSUE
   //set a loading page so that api can be fetched properly
   //before accessing the json data
@@ -73,7 +99,7 @@ function App() {
       <Header />
 
 
-      <section className='community'>
+      <section className='communityInput'>
         <div className="name">
           <input type='text' placeholder="enter name"
            value={username}
@@ -88,11 +114,14 @@ function App() {
            />
         </div>
       
-        <br></br>
-
-        <Usertable users={users}/>
-
+        <div className='addButton'>
+          <button type='Button' onClick={addUser}>join community</button>
+        </div>
       </section>
+
+      <br></br>
+      <Usertable users={users}/>
+
       <section className="filter">
             <div className="USStates">
                 <input type="text" placeholder="enter state"
