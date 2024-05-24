@@ -69,6 +69,7 @@ export default function Community() {
         <>
         <Header />
 
+        
         <UserInput
         username={username}
         setUsername={setUsername}
@@ -76,7 +77,8 @@ export default function Community() {
         setEmail={setEmail}
         addUser={addUser}
         />
-
+        
+        <div className="seperator"></div>
         <Usertable users={users}/>
         <Footer />
         </>
