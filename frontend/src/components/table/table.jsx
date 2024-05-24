@@ -21,6 +21,19 @@ export default function BasicTable({ news, stateinput, lccninput }) {
   )
 
 
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  }
+
+  const displayedNews = filteredNews.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
 
   return (
     <div className='table'>
@@ -36,7 +49,7 @@ export default function BasicTable({ news, stateinput, lccninput }) {
           </TableHead>
           
           <TableBody>
-            {filteredNews.map(news => (
+            {displayedNews.map(news => (
               <TableRow hover role ="checkbox" tabIndex={-1} key={news.id}>
                 <TableCell align='left'>{news.state}</TableCell>
                 <TableCell align='left'>
@@ -51,15 +64,15 @@ export default function BasicTable({ news, stateinput, lccninput }) {
 
         </TableContainer>
         {/* TablePagination */}
-        {/* <TablePagination
-          rowsPerPageOptions={[8]}
-          component='div'
-          count={filteredNews.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-          /> */}
+        <TablePagination
+         rowsPerPageOptions={[10, 15, 30]}
+         component="div"
+         count={filteredNews.length}
+         rowsPerPage={rowsPerPage}
+         page={page}
+         onPageChange={handleChangePage}
+         onRowsPerPageChange={handleChangeRowsPerPage}
+        />
       </Paper>
 
 
