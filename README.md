@@ -32,3 +32,6 @@ In order for your code to be assessed you must submit a PR by March 27th with th
 - a couple sentences about how the project went
 
 ** YOU DO NOT NEED TO HAVE A 100% COMPLETE PROJECT TO SUBMIT. Please submit whatever you are able to make 
+
+
+Link to video: https://drive.google.com/file/d/11gQdcpXjiKiFM7eb-4cowVgA6URX4aN-/view?usp=sharing 
