@@ -7,6 +7,9 @@ function Header() {
             <h1 className="title">
                 stateline news
             </h1>
+            <h2 className="community">
+                community
+            </h2>
         </header>
     );
 }

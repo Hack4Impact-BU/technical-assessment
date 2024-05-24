@@ -46,7 +46,7 @@ app.post('/add-user', async(req, res) => {
         res.status(201).json({ message: 'success'})
     } catch (error) {
         console.log(error)
-        res.status(500).json({ message: 'error' })
+        res.status(500).json({ message: 'error lol' })
     }
 })
 
@@ -66,7 +66,5 @@ app.get('/hello', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-    console.log("hello")
-    fetch('http://localhost:5174/news').then(res => res.json()).then(val => console.log(val.newspapers[0].state))
 })
 

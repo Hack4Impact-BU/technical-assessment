@@ -4,9 +4,7 @@ import './MainPage.css'
 
 import Header from '../components/header/header'
 import BasicTable from '../components/table/table'
-import Usertable from '../components/usertable/usertable'
 import FilterInput from '../components/filterinput/filterinput'
-import UserInput from '../components/userinput/userinput'
 import Footer from '../components/footer/footer'
 
 

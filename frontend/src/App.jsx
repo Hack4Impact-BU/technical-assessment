@@ -1,11 +1,10 @@
-import MainPage from './page/MainPage'
-import Community from './page/Community'
+import React from 'react'
+import Routing from './components/Routes'
 
 function App() {
   return (
     <>
-      <MainPage />
-      <Community />
+      <Routing />
     </>
   )
 }
