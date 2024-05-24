@@ -28,11 +28,11 @@ function Data ()  {
   }, []);
 
   const columns = [
-    { field: 'id', headerName: 'ID'},
-    { field: 'lccn', headerName: 'lccn'},
-    { field: 'state', headerName: 'State'},
-    { field: 'title', headerName: 'Title'}, 
-    { field: 'url', headerName: 'Url'}
+    { field: 'id', headerName: 'ID', width:90},
+    { field: 'lccn', headerName: 'lccn', width: 150},
+    { field: 'state', headerName: 'State', width: 150},
+    { field: 'title', headerName: 'Title', width: 350}, 
+    { field: 'url', headerName: 'Url', width: 350}
   ];
 
   const filteredRows = newspapers
@@ -95,6 +95,7 @@ return (
           label="Name" 
           variant="outlined" 
           onChange={(e) => setName(e.target.value)}/>
+
           <TextField  
           label="Email" 
           variant="outlined" 
