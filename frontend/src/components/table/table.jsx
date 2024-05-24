@@ -1,5 +1,12 @@
 import * as React from 'react';
-
+import Paper from '@mui/material/Paper';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TablePagination from '@mui/material/TablePagination';
+import TableRow from '@mui/material/TableRow';
 import "./table.css"
 
 
@@ -13,11 +20,51 @@ export default function BasicTable({ news, stateinput, lccninput }) {
     state.lccn.toLowerCase().startsWith(lccninput.toLowerCase())
   )
 
- 
+
 
   return (
     <div className='table'>
-      <table>
+      <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+        <TableContainer sx={{ maxHeight: 440 }}>
+          {/* //table header */}
+          <TableHead>
+            <TableRow>
+              <TableCell align='left' style={{ minWidth: 100 }}>state</TableCell>
+              <TableCell align='left' style={{ minWidth: 200 }}>title</TableCell>
+              <TableCell align='left' style={{ minWidth: 100 }}>lccn</TableCell>
+            </TableRow>
+          </TableHead>
+          
+          <TableBody>
+            {filteredNews.map(news => (
+              <TableRow hover role ="checkbox" tabIndex={-1} key={news.id}>
+                <TableCell align='left'>{news.state}</TableCell>
+                <TableCell align='left'>
+                  <a href={`https://www.loc.gov/items/${news.lccn}`} target='_blank'>
+                    {news.title}
+                  </a>
+                </TableCell>
+                <TableCell align='left'>{news.lccn}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+
+        </TableContainer>
+        {/* TablePagination */}
+        {/* <TablePagination
+          rowsPerPageOptions={[8]}
+          component='div'
+          count={filteredNews.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+          /> */}
+      </Paper>
+
+
+{/* old table rendering with native html */}
+      {/* <table>
       <thread>
         <tr>
           <th>state</th>
@@ -34,7 +81,7 @@ export default function BasicTable({ news, stateinput, lccninput }) {
         </tr>
       ))}
       </tbody>
-      </table>
+      </table> */}
     </div>
     
     
