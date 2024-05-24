@@ -3,16 +3,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 100%
+    height: auto;
+    width: 100%;
+}
+
+.header h1{
+    margin: 10px
+}
+
+.header h2{
+    margin: 0;
 }
 
 .title {
     margin: 0;
     text-align: center;
     color: #ffc700;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.title:hover {
+    color: #a66fe1;
+   
 }
 
 .community {
     cursor: pointer;
+    text-decoration: none;
+    color: #101010;
+}
+
+.community:hover {
+    color: #868786;
 }

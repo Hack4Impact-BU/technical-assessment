@@ -1,0 +1,16 @@
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding: 7px 55px;
+    margin-left: 50px;
+    flex: 1;
+}
+
+.info .punchline {
+    color: black;
+}
+
+.punchline a {
+    color: #a66fe1;
+}

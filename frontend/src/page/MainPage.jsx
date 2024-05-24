@@ -6,6 +6,7 @@ import Header from '../components/header/header'
 import BasicTable from '../components/table/table'
 import FilterInput from '../components/filterinput/filterinput'
 import Footer from '../components/footer/footer'
+import Words from '../components/words/words'
 
 
 function MainPage() {
@@ -45,7 +46,7 @@ function MainPage() {
   //before accessing the json data
   //so that it doesn't run into error 
   if (loading) {
-    return <div>Loading...</div>
+    return <div className='container'><p className='loading'>Loading...</p></div>
   }
 
   // grab name and email
@@ -56,6 +57,9 @@ function MainPage() {
   return (
     <>
       <Header />
+      <div className="seperator"></div>
+      <Words />
+      <div className="seperator"></div>
       <FilterInput 
        stateinput={stateinput}
        setStateInput={setStateInput}
