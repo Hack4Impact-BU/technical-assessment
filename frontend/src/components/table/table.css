@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+.table{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.paper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px !important;
+    background-color: #e0e0e0 !important;
+    
+}
+
+.MuiTable-root {
+    font-family: 'Roboto Mono', monospace !important;
+    font-size: 30px !important;
+}
+
+.tableContainer {
+    max-height: 590px;
+    width: 100%;
+    border-radius: 15px !important;
+    
+}
+
+.tableCellStateH {
+    width: 30%; /* Set a fixed width for the state column */
+    background-color: #ffc700 !important;
+    font-family: 'Roboto Mono', monospace !important;
+    color: black !important;
+    font-weight: bolder !important;
+    font-size: 20px !important;
+    
+}
+
+.tableCellTitleH {
+    width: 50%; /* Set a fixed width for the title column */
+    background-color: #ffc700 !important;
+    font-family: 'Roboto Mono', monospace !important;
+    color: black !important;
+    font-weight: bolder !important;
+    font-size: 20px !important;
+}
+
+.tableCellLccnH {
+    width: 20%; /* Set a fixed width for the lccn column */
+    background-color: #ffc700 !important;
+    font-family: 'Roboto Mono', monospace !important;
+    color: black !important;
+    font-weight: bolder !important;
+    font-size: 20px !important;
+}
+
+
+.tableCellState {
+    width: 30%; /* Set a fixed width for the state column */
+    /* background-color: #d4d4d4 !important; */
+    font-family: 'Roboto Mono', monospace !important;
+    
+}
+
+.tableCellTitle {
+    width: 50%; /* Set a fixed width for the title column */
+    /* background-color: #d4d4d4 !important; */
+    font-family: 'Roboto Mono', monospace !important;
+}
+
+.tableCellTitle a {
+    color: #a56de1;
+}
+
+.tableCellTitle a:hover {
+    color: #ffc700;
+}
+
+.tableCellLccn {
+    width: 20%; /* Set a fixed width for the lccn column */
+    /* background-color: #d4d4d4 !important; */
+    font-family: 'Roboto Mono', monospace !important;
+}
+
+
+
+

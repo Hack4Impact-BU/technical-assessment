@@ -37,30 +37,33 @@ export default function BasicTable({ news, stateinput, lccninput }) {
 
   return (
     <div className='table'>
-      <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-        <TableContainer sx={{ maxHeight: 440 }}>
+      <Paper className='paper'>
+        <TableContainer className='tableContainer'>
           {/* //table header */}
-          <TableHead>
-            <TableRow>
-              <TableCell align='left' style={{ minWidth: 100 }}>state</TableCell>
-              <TableCell align='left' style={{ minWidth: 200 }}>title</TableCell>
-              <TableCell align='left' style={{ minWidth: 100 }}>lccn</TableCell>
-            </TableRow>
-          </TableHead>
-          
-          <TableBody>
-            {displayedNews.map(news => (
-              <TableRow hover role ="checkbox" tabIndex={-1} key={news.id}>
-                <TableCell align='left'>{news.state}</TableCell>
-                <TableCell align='left'>
-                  <a href={`https://www.loc.gov/items/${news.lccn}`} target='_blank'>
-                    {news.title}
-                  </a>
-                </TableCell>
-                <TableCell align='left'>{news.lccn}</TableCell>
+          <Table stickyHeader className='MuiTable-root'>
+            <TableHead className='th'>
+              <TableRow className='thr'>
+                <TableCell className='tableCellStateH' align='left'>state</TableCell>
+                <TableCell className='tableCellTitleH' align='left'>title</TableCell>
+                <TableCell className='tableCellLccnH' align='left'>lccn</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
+            </TableHead>
+          
+            <TableBody>
+              {displayedNews.map(news => (
+                <TableRow hover role ="checkbox" tabIndex={-1} key={news.id}>
+                  <TableCell className='tableCellState' align='left'>{news.state}</TableCell>
+                  <TableCell className='tableCellTitle' align='left'>
+                    <a href={`https://www.loc.gov/items/${news.lccn}`} target='_blank'>
+                      {news.title}
+                    </a>
+                  </TableCell>
+                  <TableCell className='tableCellLccn' align='left'>{news.lccn}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+
 
         </TableContainer>
         {/* TablePagination */}
