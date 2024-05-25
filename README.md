@@ -1,34 +1,30 @@
-# technical-assessment
-By <b>March 27th</b> you must fork this repository and submit a PR (pull request) to this repository with your completed version of the app. 
+# stateline-news
 
-## Summary
-Create an app that acts as a news directory, filtering by state and lccn. You will do this using the api listed below and creating an interesting UI to navigate the results of the API with. Similar to this:
+Hey there! stateline-news is a fun little project I worked on to create a web application that serves as a directory for news publications from different states across the United States. It fetches data from the Library of Congress API and lets you search and filter the news sources based on their state and LCCN (Library of Congress Control Number). The app also has a community page where you can register yourself and see a list of other registered community members.
 
-<img src="https://www.codehim.com/wp-content/uploads/2023/10/Filter-Table-with-Select-Option-in-JavaScript.png" alt="table" width="1000px"/> <br/>
-<b>This was from a seperate project so the info in your table will be different</b>
+## About the Project
 
-It will also have a section at the bottom for users to put their emails into to join your mailing list. You should display those emails on a seperate page in a table titled "Community". You can an example of what that looks like here:
+This project was a technical assessment for me to showcase my skills in building web apps using modern front-end technologies. I worked on it all by myself, putting my React knowledge to good use and integrating with external APIs and databases.
+The main goal was to create a user-friendly interface that makes it easy for users to browse and search for news publications from different states. I added a search and filter functionality to enhance the user experience and make it simpler to find specific news sources.
+I also incorporated a community feature where users can register themselves and become part of the Stateline News community. This feature got me working with MongoDB as well for the backend portion!
 
-<img src='./demo-ss/Community-page-demo.png' alt="Community Page" width="1000px"/> <br/>
-<b>This was from a seperate project so the info in your table will be different</b>
+## Features
 
+- **News Directory**: The main page displays a table of news publications fetched from the Library of Congress API. The table includes columns for the title, LCCN, and the state where the newspaper is published.
+- **Search and Filter**: Users can search for news publications by state and LCCN using the provided search and filter functionality.
+- **Community Page**: The app includes a separate page called "Community" where users can add their name and email address to a backend database (MongoDB).
+- **Community Member List**: The Community page displays a table listing all registered community members with their name, email, and the date they joined.
 
+## Technologies Used
 
-## Requirements
-- Use a JS framework
-    - If using React don't use "create-react-app" because it is deprecated
-- Use a UI library (it will make it much easier on you)
-- Query the Library of Congress [api endpoint](https://chroniclingamerica.loc.gov/newspapers.json) and display the results in a table
-    - allow the user to filter by state and by lccn (this can be dropdowns seperate from the table)
-- Have a backend to store your community members and read from it
+- **Vite**: A modern build tool that provides a fast and lean development experience for web apps.
+- **React**: A popular JavaScript library for building user interfaces.
+- **Library of Congress API**: The data source for retrieving news publication information.
+- **MongoDB**: A NoSQL database used to store and retrieve community member data.
 
-## LLM Usage
-Using LLMs for code assistance is allowed but you WILL be asked questions about your code in the interview (if invited) so you should be very comfortable with the purpose of the code.
+## Acknowledgments
 
-## Submission
-In order for your code to be assessed you must submit a PR by March 27th with the following
-- runnable code (except the database stuff because you shouldn't have your connection uri's on github)
-- a screenrecording of your code working and you explaining how you did it
-- a couple sentences about how the project went
-
-** YOU DO NOT NEED TO HAVE A 100% COMPLETE PROJECT TO SUBMIT. Please submit whatever you are able to make 
+- [Vite](https://vitejs.dev/)
+- [React](https://reactjs.org/)
+- [Library of Congress API](https://loc.gov/apis/)
+- [MongoDB](https://www.mongodb.com/)
