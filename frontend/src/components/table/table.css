@@ -1,10 +1,9 @@
 table {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: auto;
+    margin-right: auto;
     width: 80%;
     
     font-size: 1.5rem;
-    display: block;
     border-collapse: collapse;
 }
 
