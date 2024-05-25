@@ -35,7 +35,7 @@ function MainPage() {
           console.log("fetched data")
         } catch (error) {
           console.log("Error: ", error)
-          setLoading(false);
+          // setLoading(false);
         }
       };
       fetchData();
