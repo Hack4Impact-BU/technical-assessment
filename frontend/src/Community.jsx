@@ -6,6 +6,7 @@ function Community() {
       <div className='head-bar'>
         <h2>Community</h2>
       </div>
+      
     </>
   );
 }
