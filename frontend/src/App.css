@@ -17,6 +17,7 @@ h2 {
   height: 65vh;
   overflow-y: scroll;
   border: 3px solid black;
+  border-radius: 15px;
   font-size: 16px;
 }
 
@@ -38,6 +39,13 @@ h2 {
   border-bottom: 3px solid black;
   grid-auto-rows: minmax(75px, 75px);
   padding: 0px 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-grid > *,
+.grid-item > * {
+  text-align: center;
 }
 
 .news {
@@ -45,11 +53,13 @@ h2 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 10px;
 }
 
 .selectButton {
   color: white;
   background-color: #3d5a80;
   border: 3px solid black;
+  border-radius: 15px;
   padding: 10px;
 }
