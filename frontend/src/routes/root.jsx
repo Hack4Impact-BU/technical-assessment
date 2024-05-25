@@ -1,18 +1,21 @@
 import { Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './root.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faNewspaper, faUserGroup } from '@fortawesome/free-solid-svg-icons';
 
 export default function Root() {
   return (
     <>
       <div id='sidebar'>
-        <h2>React Router Contacts</h2>
         <ul>
           <li>
+            <FontAwesomeIcon icon={faNewspaper} />
             <Link to='/'>News</Link>
           </li>
           <li>
-            <Link to='/contact'>Contact</Link>
+            <FontAwesomeIcon icon={faUserGroup} />
+            <Link to='/community'>Community</Link>
           </li>
         </ul>
       </div>

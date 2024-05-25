@@ -3,11 +3,12 @@ from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-cors = CORS(app, origins='*')
+cors = CORS(app,)
+#  origins='*'
 
 url = "https://chroniclingamerica.loc.gov/newspapers.json"
 
-@app.route('/api/news', methods=['GET'])
+@app.route('/news', methods=['GET'])
 
 def news():
     response = requests.get(url)

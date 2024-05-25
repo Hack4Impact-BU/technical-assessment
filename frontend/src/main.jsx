@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import Contact from './Contact.jsx';
+import Community from './Community.jsx';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './routes/root.jsx';
@@ -19,8 +19,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       {
-        path: 'contact',
-        element: <Contact />,
+        path: 'community',
+        element: <Community />,
         errorElement: <ErrorPage />,
       },
     ],

@@ -9,9 +9,10 @@ function App() {
   const [state, setStates] = useState([]);
   const [select, setSelect] = useState('');
 
+  // Check!
   // http://127.0.0.1:8000/api/news view
   const fetchNews = async () => {
-    const response = await axios.get('http://localhost:8000/api/news');
+    const response = await axios.get('http://localhost:8080/news');
     console.log(response.data);
     const newspapers = response.data.newspapers;
     setNewspapers(newspapers);
@@ -21,7 +22,7 @@ function App() {
     setStates(uniqueState);
   };
 
-  // run everytime new render
+  // run once
   useEffect(() => {
     fetchNews();
   }, []);
@@ -53,7 +54,6 @@ function App() {
               {each}
             </option>
           ))}
-          <FontAwesomeIcon icon={faArrowDown} />
         </select>
         {/* news box */}
         <div className='grid-container'>
