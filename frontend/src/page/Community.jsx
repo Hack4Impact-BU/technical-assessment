@@ -25,7 +25,7 @@ export default function Community() {
 
     //storing userdata so it can pass in userTable
     useEffect(() => {
-        fetch('http://localhost:5174/user')
+        fetch('stateline-news-production.up.railway.app/user')
         .then(res => res.json())
         .then(data => {
             setUsers(data);
@@ -42,7 +42,7 @@ export default function Community() {
         if (username === '' || email === '') return
   
         try {
-          fetch('http://localhost:5174/add-user', {
+          fetch('stateline-news-production.up.railway.app/add-user', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

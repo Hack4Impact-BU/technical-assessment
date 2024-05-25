@@ -28,7 +28,7 @@ function MainPage() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const res = await fetch('http://localhost:5174/news');
+          const res = await fetch('stateline-news-production.up.railway.app/news');
           const data = await res.json();
           setData(data)
           setLoading(false);
