@@ -1,16 +1,21 @@
+// backend/server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://mebattll:kRo8cb5QmKnD9eoj@cluster0.5zg7ohn.mongodb.net/', {
+const mongoURI = process.env.MONGO_URI;
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error(err));
 
 // Define a schema and model for users
 const userSchema = new mongoose.Schema({

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NewspapersTable from '../components/NewspapersTable';
 import JoinCommunityForm from '../components/JoinCommunityForm';
-import CommunityTable from '../components/CommunityTable';
+import CommunityTable from '../components/CommunityTable.js';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
