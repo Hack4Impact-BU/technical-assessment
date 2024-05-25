@@ -14,7 +14,7 @@ const JoinCommunityForm = () => {
     e.preventDefault();
     const userData = { firstName, lastName, email };
     try {
-      await axios.post('http://localhost:5000/api/join', userData);
+      await axios.post('http://localhost:5001/api/join', userData);
       console.log('User joined:', userData);
       setFirstName('');
       setLastName('');
