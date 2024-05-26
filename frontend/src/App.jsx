@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
+import Signup from './components/Signup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,10 +11,8 @@ function App() {
   const [select, setSelect] = useState('');
 
   // Check!
-  // http://127.0.0.1:8000/api/news view
   const fetchNews = async () => {
     const response = await axios.get('http://localhost:8080/news');
-    console.log(response.data);
     const newspapers = response.data.newspapers;
     setNewspapers(newspapers);
     // make array for dropdown filter
@@ -73,7 +72,7 @@ function App() {
           ))}
         </div>
       </div>
-      <p className='read-the-docs'></p>
+      <Signup />
     </>
   );
 }

@@ -36,3 +36,38 @@
 .com-item > * {
   text-align: center;
 }
+
+form > * {
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+form {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+input {
+  height: 30px;
+  width: 150px;
+}
+
+button {
+  height: 36px;
+  width: 100px;
+  background-color: #98c1d9;
+}
+
+.member-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 3px solid black;
+  grid-auto-rows: minmax(75px, 75px);
+  padding: 0px 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

@@ -1,0 +1,23 @@
+form > * {
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+form {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+input {
+  height: 30px;
+  width: 150px;
+}
+
+button {
+  height: 36px;
+  width: 100px;
+  background-color: #98c1d9;
+}
