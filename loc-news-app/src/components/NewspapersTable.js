@@ -87,7 +87,7 @@ const NewspapersTable = () => {
           <TableBody>
             {filteredNewspapers.map((newspaper) => (
               <TableRow key={newspaper.id}>
-                <TableCell>{newspaper.title}</TableCell>
+                <TableCell>{newspaper.title.toLowerCase().replace(/\[.*?\]/g, '').trim()}</TableCell>
                 <TableCell>{newspaper.state}</TableCell>
                 <TableCell>{newspaper.lccn}</TableCell>
               </TableRow>

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <Container>
       <Typography variant="h4" gutterBottom>
-        Library of Congress Newspapers
+        Filter Paper
       </Typography>
       <Button variant="contained" color="primary" onClick={() => setView(view === 'newspapers' ? 'community' : 'newspapers')}>
         {view === 'newspapers' ? 'View Community' : 'View Newspapers'}
