@@ -28,7 +28,7 @@ function Community() {
           <p>Date</p>
         </div>
         {members.map((member) => (
-          <div className='member-div'>
+          <div key={member.id} className='member-div'>
             <p>{member.firstName}</p>
             <p>{member.lastName}</p>
             <p>{member.date}</p>
