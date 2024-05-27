@@ -31,7 +31,7 @@ export default function Community() {
             setUsers(data);
         })
     }, [])
-      z
+      
     function addUser() {
         //grab the date in string form
         let today = new Date();
