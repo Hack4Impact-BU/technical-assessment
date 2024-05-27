@@ -2,6 +2,8 @@
 
 Hey there! stateline-news is a fun little project I worked on to create a web application that serves as a directory for news publications from different states across the United States. It fetches data from the Library of Congress API and lets you search and filter the news sources based on their state and LCCN (Library of Congress Control Number). The app also has a community page where you can register yourself and see a list of other registered community members.
 
+access it (here)[https://stateline-news.vercel.app/]
+
 ## About the Project
 
 This project was a technical assessment for me to showcase my skills in building web apps using modern front-end technologies. I worked on it all by myself, putting my React knowledge to good use and integrating with external APIs and databases.
