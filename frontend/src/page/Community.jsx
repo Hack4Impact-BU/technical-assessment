@@ -25,13 +25,13 @@ export default function Community() {
 
     //storing userdata so it can pass in userTable
     useEffect(() => {
-        fetch('stateline-news-production.up.railway.app/user')
+        fetch('https://stateline-news-production.up.railway.app/user')
         .then(res => res.json())
         .then(data => {
             setUsers(data);
         })
     }, [])
-      
+      z
     function addUser() {
         //grab the date in string form
         let today = new Date();
@@ -42,7 +42,7 @@ export default function Community() {
         if (username === '' || email === '') return
   
         try {
-          fetch('stateline-news-production.up.railway.app/add-user', {
+          fetch('https://stateline-news-production.up.railway.app/add-user', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

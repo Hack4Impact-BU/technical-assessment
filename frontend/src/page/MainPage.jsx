@@ -28,14 +28,14 @@ function MainPage() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const res = await fetch('stateline-news-production.up.railway.app/news');
+          const res = await fetch('https://stateline-news-production.up.railway.app/news');
           const data = await res.json();
           setData(data)
           setLoading(false);
           console.log("fetched data")
         } catch (error) {
           console.log("Error: ", error)
-          // setLoading(false);
+          setLoading(false);
         }
       };
       fetchData();
