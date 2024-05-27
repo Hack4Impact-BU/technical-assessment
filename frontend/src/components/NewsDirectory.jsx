@@ -20,9 +20,9 @@ function NewsDirectory({ news }) {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell className="title-cell">Title</TableCell>
-            <TableCell className="other-cell">State</TableCell>
-            <TableCell className="other-cell">LCCN</TableCell>
+            <TableCell className="title-cell" sx={{ fontWeight: 'bold' }}>Title</TableCell>
+            <TableCell className="other-cell" sx={{ fontWeight: 'bold' }}>State</TableCell>
+            <TableCell className="other-cell" sx={{ fontWeight: 'bold' }}>LCCN</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

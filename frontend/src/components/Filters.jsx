@@ -57,7 +57,7 @@ const states = [
 function Filters({ state, setState, lccn, setLccn, fetchNews }) {
   return (
     <Grid container spacing={2} alignItems="center">
-      <Grid item xs={12} sm={4}>
+      <Grid item xs={12} sm={5}>
         <TextField
           id="state-select"
           name="state"
@@ -79,7 +79,7 @@ function Filters({ state, setState, lccn, setLccn, fetchNews }) {
           ))}
         </TextField>
       </Grid>
-      <Grid item xs={12} sm={4}>
+      <Grid item xs={12} sm={5}>
         <TextField
           id="lccn-input"
           name="lccn"
@@ -91,7 +91,7 @@ function Filters({ state, setState, lccn, setLccn, fetchNews }) {
           margin="normal"
         />
       </Grid>
-      <Grid item xs={12} sm={4}>
+      <Grid item xs={12} sm={2}>
         <Button variant="contained" color="primary" onClick={fetchNews} style={{ height:'56px', width: '150px', marginTop: '10px' }}>
           Filter
         </Button>

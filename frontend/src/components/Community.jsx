@@ -6,7 +6,7 @@ function Community({ community }) {
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell>Email</TableCell>
+          <TableCell sx={{ fontWeight: 'bold' }}>Email</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
