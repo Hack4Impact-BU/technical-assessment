@@ -124,7 +124,7 @@ function App() {
                       color="primary"
                       onClick={handleEmailSubmit}
                       fullWidth
-                      style={{ height: '56px', marginTop: '16px' }}
+                      style={{ height: '56px', marginTop: '10px' }}
                     >
                       Subscribe
                     </Button>
