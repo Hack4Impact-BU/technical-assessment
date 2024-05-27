@@ -35,7 +35,7 @@ function App() {
       await axios.post('http://localhost:5001/api/community', { email });
       fetchCommunity();
     } catch (error) {
-      console.error(error);
+      console.error('Error submitting email:', error);
     }
   };
 
