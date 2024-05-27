@@ -6,12 +6,12 @@ const apiRoutes = require('./routes/api');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5001; // Change port
+const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'http://localhost:5173'  // Allow requests from this origin
+    origin: 'http://localhost:5173' // Allow requests from this origin
 }));
 
 // MongoDB connection

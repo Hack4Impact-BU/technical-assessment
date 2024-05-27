@@ -12,6 +12,7 @@ function App() {
   const [news, setNews] = useState([]);
   const [state, setState] = useState('');
   const [lccn, setLccn] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [community, setCommunity] = useState([]);
 
@@ -35,7 +36,7 @@ function App() {
 
   const handleEmailSubmit = async () => {
     try {
-      await axios.post('http://localhost:5001/api/community', { email });
+      await axios.post('http://localhost:5001/api/community', { name, email });
       fetchCommunity();
     } catch (error) {
       console.error('Error submitting email:', error);
@@ -93,7 +94,19 @@ function App() {
                   Join Our Community!
                 </Typography>
                 <Grid container spacing={2} alignItems="center" style={{ marginBottom: '50px' }}>
-                  <Grid item xs={12} sm={9}>
+                  <Grid item xs={12} sm={4.5}>
+                    <TextField
+                      id="name-input"
+                      name="name"
+                      label="Name"
+                      value={name}
+                      onChange={e => setName(e.target.value)}
+                      fullWidth
+                      variant="outlined"
+                      margin="normal"
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={4.5}>
                     <TextField
                       id="email-input"
                       name="email"

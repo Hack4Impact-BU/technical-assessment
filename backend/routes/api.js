@@ -24,25 +24,30 @@ router.get('/news', async (req, res) => {
   }
 });
 
-router.get('/community', async (req, res) => {
+// Add a new community member
+router.post('/community', async (req, res) => {
+  const { name, email } = req.body;
+  console.log('Incoming data:', { name, email }); // Log the incoming data
+  if (!name || !email) {
+    return res.status(400).json({ message: 'Name and email are required' });
+  }
+
   try {
-    const members = await Community.find();
-    res.json(members);
-  } catch (err) {
-    console.error('Error fetching community:', err);
-    res.status(500).json({ error: 'Internal server error' });
+    const newMember = new Community({ name, email });
+    await newMember.save();
+    res.status(201).json({ message: 'Community member added' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error adding community member', error });
   }
 });
 
-router.post('/community', async (req, res) => {
-  const email = req.body.email;
+// Get all community members
+router.get('/community', async (req, res) => {
   try {
-    const newMember = new Community({ email });
-    await newMember.save();
-    res.json({ message: 'Member added' });
-  } catch (err) {
-    console.error('Error adding community member:', err);
-    res.status(500).json({ error: 'Internal server error' });
+    const members = await Community.find();
+    res.status(200).json(members);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching community members', error });
   }
 });
 
