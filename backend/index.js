@@ -9,7 +9,9 @@ dotenv.config()
 const app = express()
 
 const corsOptions = {
-    origin: 'https://stateline-news.vercel.app/', // Allow requests from your Vercel app
+    origin: 'https://stateline-news.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow requests from your Vercel app
+    credentials: true,
     optionsSuccessStatus: 200,
   };
   
