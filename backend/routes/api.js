@@ -10,11 +10,11 @@ router.get('/news', async (req, res) => {
     let newspapers = response.data.newspapers;
 
     if (state) {
-      newspapers = newspapers.filter(item => item.state === state);
+      newspapers = newspapers.filter(item => item.state.toLowerCase() === state.toLowerCase());
     }
 
     if (lccn) {
-      newspapers = newspapers.filter(item => item.lccn === lccn);
+      newspapers = newspapers.filter(item => item.lccn.toLowerCase().includes(lccn.toLowerCase()));
     }
 
     res.json(newspapers);

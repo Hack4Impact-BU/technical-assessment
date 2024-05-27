@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, TextField, Button, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
+import { Container, Typography, TextField, Button } from '@mui/material';
 import axios from 'axios';
 import Filters from './components/Filters.jsx';
 import NewsDirectory from './components/NewsDirectory.jsx';
@@ -50,8 +50,17 @@ function App() {
       <Filters state={state} setState={setState} lccn={lccn} setLccn={setLccn} fetchNews={fetchNews} />
       <NewsDirectory news={news} />
       <Typography variant="h4" gutterBottom>Join Our Community</Typography>
-      <TextField label="Email" value={email} onChange={e => setEmail(e.target.value)} />
-      <Button onClick={handleEmailSubmit}>Join Now!</Button>
+
+      <TextField
+        id="email-input"
+        name="email"
+        label="Email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+      />
+      <Button variant="contained" color="primary" onClick={handleEmailSubmit}>
+        Join Now!
+      </Button>
       <Community community={community} />
     </Container>
   );

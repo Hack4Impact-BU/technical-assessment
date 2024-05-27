@@ -58,6 +58,8 @@ function Filters({ state, setState, lccn, setLccn, fetchNews }) {
   return (
     <div>
       <TextField
+        id="state-select"
+        name="state"
         label="State"
         value={state}
         onChange={e => setState(e.target.value)}
@@ -70,12 +72,15 @@ function Filters({ state, setState, lccn, setLccn, fetchNews }) {
           <em>All States</em>
         </MenuItem>
         {states.map((state) => (
-          <MenuItem key={state.code} value={state.code}>
+          <MenuItem key={state.code} value={state.name}>
             {state.name}
           </MenuItem>
         ))}
       </TextField>
+
       <TextField
+        id="lccn-input"
+        name="lccn"
         label="LCCN"
         value={lccn}
         onChange={e => setLccn(e.target.value)}
@@ -91,3 +96,4 @@ function Filters({ state, setState, lccn, setLccn, fetchNews }) {
 }
 
 export default Filters;
+ 
