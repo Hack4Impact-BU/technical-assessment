@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, TextField, Button, Grid } from '@mui/material';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import axios from 'axios';
 import Filters from './components/Filters.jsx';
 import NewsDirectory from './components/NewsDirectory.jsx';
@@ -45,42 +46,61 @@ function App() {
   }, []);
 
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom style={{ marginTop: '20px' }}>
-        News Directory
-      </Typography>
-      <Filters state={state} setState={setState} lccn={lccn} setLccn={setLccn} fetchNews={fetchNews} />
-      <NewsDirectory news={news} />
-      <Typography variant="h4" gutterBottom>
-        Join Our Community
-      </Typography>
-      <Grid container spacing={2} alignItems="center">
-        <Grid item xs={12} sm={8}>
-          <TextField
-            id="email-input"
-            name="email"
-            label="Email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            fullWidth
-            variant="outlined"
-            margin="normal"
-          />
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleEmailSubmit}
-            fullWidth
-            style={{ height: '56px', width: '150px', marginTop: '10px' }}
-          >
-            Join Now!
-          </Button>
-        </Grid>
-      </Grid>
-      <Community community={community} />
-    </Container>
+    <Router>
+      <Container>
+        <nav>
+          <Link to="/" style={{ marginRight: '10px' }}>News Directory</Link>
+          <Link to="/community">Community</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Typography variant="h4" gutterBottom style={{ marginTop: '20px' }}>
+                News Directory
+              </Typography>
+              <Filters state={state} setState={setState} lccn={lccn} setLccn={setLccn} fetchNews={fetchNews} />
+              <NewsDirectory news={news} />
+              <Typography variant="h4" gutterBottom>
+                Join Our Community
+              </Typography>
+              <Grid container spacing={2} alignItems="center">
+                <Grid item xs={12} sm={9}>
+                  <TextField
+                    id="email-input"
+                    name="email"
+                    label="Email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    fullWidth
+                    variant="outlined"
+                    margin="normal"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={3}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleEmailSubmit}
+                    fullWidth
+                    style={{ height: '56px', marginTop: '16px' }}
+                  >
+                    Join Now!
+                  </Button>
+                </Grid>
+              </Grid>
+            </>
+          } />
+          <Route path="/community" element={
+            <>
+              <Typography variant="h4" gutterBottom style={{ marginTop: '20px' }}>
+                Community
+              </Typography>
+              <Community community={community} />
+            </>
+          } />
+        </Routes>
+      </Container>
+    </Router>
   );
 }
 
