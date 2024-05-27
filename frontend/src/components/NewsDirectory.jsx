@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableRow, TablePagination } from '@mui/material';
+import './NewsDirectory.css';
 
 function NewsDirectory({ news }) {
   const [page, setPage] = useState(0);
@@ -19,17 +20,17 @@ function NewsDirectory({ news }) {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Title</TableCell>
-            <TableCell>State</TableCell>
-            <TableCell>LCCN</TableCell>
+            <TableCell className="title-cell">Title</TableCell>
+            <TableCell className="other-cell">State</TableCell>
+            <TableCell className="other-cell">LCCN</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {news.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item, index) => (
             <TableRow key={index}>
-              <TableCell>{item.title}</TableCell>
-              <TableCell>{item.state}</TableCell>
-              <TableCell>{item.lccn}</TableCell>
+              <TableCell className="title-cell">{item.title}</TableCell>
+              <TableCell className="other-cell">{item.state}</TableCell>
+              <TableCell className="other-cell">{item.lccn}</TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, TextField, Button } from '@mui/material';
+import { Container, Typography, TextField, Button, Grid } from '@mui/material';
 import axios from 'axios';
 import Filters from './components/Filters.jsx';
 import NewsDirectory from './components/NewsDirectory.jsx';
@@ -46,21 +46,39 @@ function App() {
 
   return (
     <Container>
-      <Typography variant="h4" gutterBottom>News Directory</Typography>
+      <Typography variant="h4" gutterBottom style={{ marginTop: '20px' }}>
+        News Directory
+      </Typography>
       <Filters state={state} setState={setState} lccn={lccn} setLccn={setLccn} fetchNews={fetchNews} />
       <NewsDirectory news={news} />
-      <Typography variant="h4" gutterBottom>Join Our Community</Typography>
-
-      <TextField
-        id="email-input"
-        name="email"
-        label="Email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-      />
-      <Button variant="contained" color="primary" onClick={handleEmailSubmit}>
-        Join Now!
-      </Button>
+      <Typography variant="h4" gutterBottom>
+        Join Our Community
+      </Typography>
+      <Grid container spacing={2} alignItems="center">
+        <Grid item xs={12} sm={8}>
+          <TextField
+            id="email-input"
+            name="email"
+            label="Email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            fullWidth
+            variant="outlined"
+            margin="normal"
+          />
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleEmailSubmit}
+            fullWidth
+            style={{ height: '56px', width: '150px', marginTop: '10px' }}
+          >
+            Join Now!
+          </Button>
+        </Grid>
+      </Grid>
       <Community community={community} />
     </Container>
   );

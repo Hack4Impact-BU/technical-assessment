@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Button, MenuItem } from '@mui/material';
+import { TextField, Button, MenuItem, Grid } from '@mui/material';
 
 const states = [
   { code: 'AL', name: 'Alabama' },
@@ -56,44 +56,48 @@ const states = [
 
 function Filters({ state, setState, lccn, setLccn, fetchNews }) {
   return (
-    <div>
-      <TextField
-        id="state-select"
-        name="state"
-        label="State"
-        value={state}
-        onChange={e => setState(e.target.value)}
-        select
-        fullWidth
-        variant="outlined"
-        margin="normal"
-      >
-        <MenuItem value="">
-          <em>All States</em>
-        </MenuItem>
-        {states.map((state) => (
-          <MenuItem key={state.code} value={state.name}>
-            {state.name}
+    <Grid container spacing={2} alignItems="center">
+      <Grid item xs={12} sm={4}>
+        <TextField
+          id="state-select"
+          name="state"
+          label="State"
+          value={state}
+          onChange={e => setState(e.target.value)}
+          select
+          fullWidth
+          variant="outlined"
+          margin="normal"
+        >
+          <MenuItem value="">
+            <em>All States</em>
           </MenuItem>
-        ))}
-      </TextField>
-
-      <TextField
-        id="lccn-input"
-        name="lccn"
-        label="LCCN"
-        value={lccn}
-        onChange={e => setLccn(e.target.value)}
-        fullWidth
-        variant="outlined"
-        margin="normal"
-      />
-      <Button variant="contained" color="primary" onClick={fetchNews}>
-        Filter
-      </Button>
-    </div>
+          {states.map((state) => (
+            <MenuItem key={state.code} value={state.name}>
+              {state.name}
+            </MenuItem>
+          ))}
+        </TextField>
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <TextField
+          id="lccn-input"
+          name="lccn"
+          label="LCCN"
+          value={lccn}
+          onChange={e => setLccn(e.target.value)}
+          fullWidth
+          variant="outlined"
+          margin="normal"
+        />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <Button variant="contained" color="primary" onClick={fetchNews} style={{ height:'56px', width: '150px', marginTop: '10px' }}>
+          Filter
+        </Button>
+      </Grid>
+    </Grid>
   );
 }
 
 export default Filters;
- 
