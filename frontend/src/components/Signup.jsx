@@ -2,42 +2,44 @@ import './Signup.css';
 import { useState } from 'react';
 
 function Signup({ addMember }) {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
   function processName(e) {
     e.preventDefault();
-    addMember(firstName, lastName);
-    setFirstName('');
-    setLastName('');
+    addMember(name, email);
+    setName('');
+    setEmail('');
   }
 
-  function setFirst(e) {
-    setFirstName(e.target.value);
+  function setNames(e) {
+    setName(e.target.value);
   }
 
-  function setLast(e) {
-    setLastName(e.target.value);
+  function setEmails(e) {
+    setEmail(e.target.value);
   }
 
   return (
     <>
       <form onSubmit={processName}>
-        <label htmlFor='firstName'>First Name:</label>
+        <label htmlFor='Name'>Name:</label>
         <input
           type='text'
-          id='firstName'
-          value={firstName}
-          onChange={setFirst}
-          placeholder='James'
+          id='Name'
+          value={name}
+          onChange={setNames}
+          placeholder='James Hook'
+          required
         ></input>
-        <label htmlFor='lastName'>Last Name:</label>
+        <label htmlFor='email'>E-mail:</label>
         <input
-          type='text'
-          id='lastName'
-          value={lastName}
-          onChange={setLast}
-          placeholder='Mango'
+          type='email'
+          id='email'
+          value={email}
+          onChange={setEmails}
+          placeholder='abc@bu.edu'
+          required
         ></input>
         <button>Join!</button>
       </form>

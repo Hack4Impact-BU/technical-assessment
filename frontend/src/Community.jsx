@@ -5,11 +5,11 @@ import { useState } from 'react';
 function Community() {
   const [members, setMembers] = useState([]);
 
-  function addMember(firstName, lastName) {
+  function addMember(name, email) {
     const today = new Date();
     const newMem = {
-      firstName,
-      lastName,
+      name,
+      email,
       date: `${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}`,
     };
     setMembers((members) => [...members, newMem]);
@@ -23,14 +23,14 @@ function Community() {
       <Signup addMember={addMember} />
       <div className='community-grid'>
         <div className='sort-grid'>
-          <p>First Name</p>
-          <p>Last Name</p>
+          <p>Name</p>
+          <p>E-mail</p>
           <p>Date</p>
         </div>
         {members.map((member) => (
           <div key={member.id} className='member-div'>
-            <p>{member.firstName}</p>
-            <p>{member.lastName}</p>
+            <p>{member.name}</p>
+            <p>{member.email}</p>
             <p>{member.date}</p>
           </div>
         ))}
