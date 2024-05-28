@@ -1,4 +1,4 @@
-// backend/index.js
+
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const app = express();
 
-// Middleware
+
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -20,7 +20,6 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log('Error connecting to MongoDB:', err));
 
-// Define the Member schema and model
 const memberSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
@@ -29,7 +28,7 @@ const memberSchema = new mongoose.Schema({
 
 const Member = mongoose.model('Member', memberSchema);
 
-// API endpoint to add a new member
+
 app.post('/api/members', async (req, res) => {
   try {
     const { name, email } = req.body;
@@ -41,7 +40,6 @@ app.post('/api/members', async (req, res) => {
   }
 });
 
-// API endpoint to get all members
 app.get('/api/members', async (req, res) => {
   try {
     const members = await Member.find();
@@ -51,6 +49,6 @@ app.get('/api/members', async (req, res) => {
   }
 });
 
-// Start the server
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server running on port ${port}`));

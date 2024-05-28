@@ -26,8 +26,8 @@ export const Table_main = ({ apiEndpoint }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`https://cors-anywhere.herokuapp.com/${apiEndpoint}`);
-        console.log(response.data); // Log the API response
-        setData(response.data.newspapers); // Adjust according to the data structure
+        console.log(response.data); 
+        setData(response.data.newspapers); 
         setFilteredData(response.data.newspapers);
         setIsLoading(false);
       } catch (error) {
@@ -52,7 +52,7 @@ export const Table_main = ({ apiEndpoint }) => {
       filtered = filtered.filter(item => item.lccn.toLowerCase().startsWith(lccnValue.toLowerCase()));
     }
 
-    console.log('Filtered Data:', filtered); // Log filtered data
+    console.log('Filtered Data:', filtered); 
     setFilteredData(filtered);
   }, [stateValue, lccnValue, data]);
 
