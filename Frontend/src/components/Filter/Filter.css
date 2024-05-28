@@ -1,0 +1,15 @@
+.filter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .filter-input {
+    margin-right: 20px;
+    padding: 5px;
+  }

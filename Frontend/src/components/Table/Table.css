@@ -1,21 +1,28 @@
-.filter-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 10px; 
-}
-
-.filter-container select,
-.filter-container input {
-  margin-right: 10px; 
-  padding: 5px; 
-}
-
 .table-border-container {
   position: relative;
   border: 2px solid #000; 
   padding: 10px;
   margin-bottom: 20px; 
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.filter-select {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.filter-input {
+  padding: 5px;
 }
 
 .table-wrapper {
@@ -34,10 +41,10 @@
 
 .table-row-count {
   margin-top: 10px; 
-  font-size: 14px;
-  color: #000; 
+  font-size: 14px; 
+  color: #000;
   background-color: blue; 
-  padding: 10px; 
-  border-radius: 5px; 
-  color: white; 
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
 }
