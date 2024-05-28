@@ -1,0 +1,43 @@
+.filter-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px; 
+}
+
+.filter-container select,
+.filter-container input {
+  margin-right: 10px; 
+  padding: 5px; 
+}
+
+.table-border-container {
+  position: relative;
+  border: 2px solid #000; 
+  padding: 10px;
+  margin-bottom: 20px; 
+}
+
+.table-wrapper {
+  max-height: 400px; 
+  overflow-y: auto;
+}
+
+.table-wrapper a {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.table-wrapper a:hover {
+  text-decoration: none; 
+}
+
+.table-row-count {
+  margin-top: 10px; 
+  font-size: 14px;
+  color: #000; 
+  background-color: blue; 
+  padding: 10px; 
+  border-radius: 5px; 
+  color: white; 
+}
