@@ -12,7 +12,6 @@ function App() {
   return (
     
       <div>
-        <Community />
         <Table_main apiEndpoint="https://chroniclingamerica.loc.gov/newspapers.json" />
       </div>
       

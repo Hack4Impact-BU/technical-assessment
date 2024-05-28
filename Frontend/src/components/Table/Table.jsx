@@ -4,8 +4,11 @@ import './Table.css'
 import Table from 'react-bootstrap/Table'   
 import axios from 'axios';
 import Filter from '../Filter/Filter'
+import Community from '../Community/Community'
+
 
 export const Table_main = ({ apiEndpoint }) => {
+  
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -13,12 +16,17 @@ export const Table_main = ({ apiEndpoint }) => {
   const [stateValue, setStateValue] = useState('');
   const [lccnValue, setLccnValue] = useState('');
 
+  const handleCommunitySubmit = (formData) => {
+    console.log('Community form submitted:', formData);
+    // Add your logic to handle form submission, e.g., saving to a database or state
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`https://cors-anywhere.herokuapp.com/${apiEndpoint}`);
-        console.log(response.data);
-        setData(response.data.newspapers); 
+        console.log(response.data); // Log the API response
+        setData(response.data.newspapers); // Adjust according to the data structure
         setFilteredData(response.data.newspapers);
         setIsLoading(false);
       } catch (error) {
@@ -40,10 +48,10 @@ export const Table_main = ({ apiEndpoint }) => {
     }
 
     if (lccnValue) {
-      filtered = filtered.filter(item => item.lccn.toLowerCase().includes(lccnValue.toLowerCase()));
+      filtered = filtered.filter(item => item.lccn.toLowerCase().startsWith(lccnValue.toLowerCase()));
     }
 
-    console.log('Filtered Data:', filtered);
+    console.log('Filtered Data:', filtered); // Log filtered data
     setFilteredData(filtered);
   }, [stateValue, lccnValue, data]);
 
@@ -94,9 +102,12 @@ export const Table_main = ({ apiEndpoint }) => {
         </Table>
       </div>
       <p className="table-row-count">{resultMessage}</p>
+      <Community onSubmit={handleCommunitySubmit} />
     </div>
+  );
+};
+
         
-    );
-  }
+    
   
   export default Table_main;

@@ -1,0 +1,39 @@
+/* src/components/Community/Community.css */
+
+/* src/components/Community/Community.css */
+
+.community-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.community-form .form-group {
+  margin-bottom: 15px;
+}
+
+.community-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.community-form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  padding: 10px 15px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: darkblue;
+}
