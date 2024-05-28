@@ -15,10 +15,11 @@ export const Table_main = ({ apiEndpoint }) => {
   const [error, setError] = useState(null);
   const [stateValue, setStateValue] = useState('');
   const [lccnValue, setLccnValue] = useState('');
+  const [communityMembers, setCommunityMembers] = useState([]);
 
   const handleCommunitySubmit = (formData) => {
     console.log('Community form submitted:', formData);
-    // Add your logic to handle form submission, e.g., saving to a database or state
+    setCommunityMembers([...communityMembers, { ...formData, joined: new Date().toLocaleDateString() }]);
   };
 
   useEffect(() => {
@@ -103,6 +104,27 @@ export const Table_main = ({ apiEndpoint }) => {
       </div>
       <p className="table-row-count">{resultMessage}</p>
       <Community onSubmit={handleCommunitySubmit} />
+      <div className="community-list">
+        <h3>Community Members</h3>
+        <Table responsive bordered>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Joined</th>
+            </tr>
+          </thead>
+          <tbody>
+            {communityMembers.map((member, index) => (
+              <tr key={index}>
+                <td>{member.name}</td>
+                <td>{member.email}</td>
+                <td>{member.joined}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
     </div>
   );
 };
