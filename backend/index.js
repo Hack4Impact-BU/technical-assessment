@@ -1,8 +1,5 @@
 // backend/index.js
 
-
-
-
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -21,7 +18,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
 })
 .then(() => console.log('MongoDB connected'))
-.catch(err => console.log(err));
+.catch(err => console.log('Error connecting to MongoDB:', err));
 
 // Define the Member schema and model
 const memberSchema = new mongoose.Schema({

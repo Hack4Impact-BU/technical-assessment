@@ -1,4 +1,3 @@
-// src/components/Community/Community.jsx
 
 import React, { useState } from 'react';
 import './Community.css';
@@ -47,4 +46,3 @@ const Community = ({ onSubmit }) => {
 };
 
 export default Community;
-
